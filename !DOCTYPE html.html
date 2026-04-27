@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glen Qesku | Terminal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #0d1117; /* GitHub dark mode background */
+            color: #10b981; /* Terminal Green */
+            font-family: 'Fira Code', monospace;
+            line-height: 1.6;
+        }
+        .text-dim { color: #8b949e; }
+        .text-blue { color: #58a6ff; }
+        .text-yellow { color: #e3b341; }
+        
+        ::selection {
+            background: #10b981;
+            color: #0d1117;
+        }
+        
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            height: 1.2em;
+            background-color: #10b981;
+            animation: blink 1s step-end infinite;
+            vertical-align: text-bottom;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        a:hover {
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+        
+        /* Custom link styling for the terminal aesthetic */
+        .terminal-link {
+            color: #58a6ff;
+            text-decoration: none;
+            border-bottom: 1px dashed #58a6ff;
+            transition: all 0.2s ease-in-out;
+        }
+        .terminal-link:hover {
+            color: #ffffff;
+            border-bottom: 1px solid #ffffff;
+        }
+    </style>
+</head>
+<body class="p-6 md:p-12 w-full max-w-6xl mx-auto min-h-screen selection:bg-green-500 selection:text-black">
+
+    <header class="mb-12 border-b border-gray-800 pb-6 w-full">
+        <div class="text-4xl font-bold mb-2">
+            <span class="text-dim">user@server:~$</span> ./start_portfolio.sh
+        </div>
+        <div class="text-6xl font-bold text-white mt-8 mb-4">
+            <span class="text-blue">&lt;</span> Glen_Qesku <span class="text-blue">/&gt;</span>
+        </div>
+        <p class="text-xl">B.Sc. Computer Science Student @ Constructor University</p>
+        <p class="text-dim mt-2 flex flex-wrap items-center gap-2">
+            Bremen, Germany | g.qesku@gmail.com | 
+            <a href="https://github.com/GlenQesku" target="_blank" class="terminal-link text-lg">[ GitHub ]</a> |
+            <a href="https://www.linkedin.com/in/glen-qesku-6a5b26179/" target="_blank" class="terminal-link text-lg">[ LinkedIn ]</a> |
+            
+            <a href="Glen_Qesku_CV.pdf" download class="terminal-link text-lg text-yellow-400 border-yellow-400 hover:text-white hover:border-white">[ Download CV ]</a>
+        </p>
+    </header>
+
+    <section class="mb-12 w-full">
+        <h2 class="text-2xl font-bold text-blue mb-4">root@glen:~/skills# cat tech_stack.json</h2>
+        <div class="pl-4 border-l-2 border-gray-800">
+            <p><span class="text-dim">{</span></p>
+            <p class="pl-4"><span class="text-yellow">"languages"</span>: <span class="text-white">["Python", "C", "C++", "Java", "SQL", "Bash"]</span>,</p>
+            <p class="pl-4"><span class="text-yellow">"databases"</span>: <span class="text-white">["MySQL", "MariaDB"]</span>,</p>
+            <p class="pl-4"><span class="text-yellow">"systems_&_tools"</span>: <span class="text-white">["Linux", "Git", "GitHub"]</span>,</p>
+            <p class="pl-4"><span class="text-yellow">"learning"</span>: 
+                <span class="text-white">"<a href="https://www.coursera.org/account/accomplishments/verify/E0TKZ4EQD9GE" target="_blank" class="terminal-link">Google Cybersecurity Professional Certificate (In Progress)</a>"</span>
+            </p>
+            <p><span class="text-dim">}</span></p>
+        </div>
+    </section>
+
+    <section class="mb-12 w-full">
+        <h2 class="text-2xl font-bold text-blue mb-4">root@glen:~/projects# ls -la</h2>
+        
+        <div class="mt-4 pl-4">
+            <div class="mb-6">
+                <h3 class="text-xl font-bold text-white">drwxr-xr-x  MediSched</h3>
+                <p class="text-dim mb-2">09/2025 - 12/2025 | Database Systems Course Project</p>
+                <ul class="list-none pl-4 space-y-1">
+                    <li>> Designed a relational database for managing patients, doctors, and appointments.</li>
+                    <li>> Created ER diagrams and applied strict normalization principles.</li>
+                    <li>> Implemented complex SQL queries for scheduling and data retrieval in a Linux environment.</li>
+                    <li class="mt-2"><span class="text-yellow">Tech:</span> SQL, MariaDB, ER Modeling, Linux, Git</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="mb-12 w-full">
+        <h2 class="text-2xl font-bold text-blue mb-4">root@glen:~/experience# tail -f history.log</h2>
+        
+        <div class="mt-4 pl-4 border-l-2 border-gray-800">
+            <div class="mb-4">
+                <h3 class="text-xl font-bold text-white">IT Intern @ IDRA</h3>
+                <p class="text-dim mb-2">07/2023 - 09/2023 | IT, Research and Consulting Dept.</p>
+                <ul class="list-none pl-4 space-y-1">
+                    <li>> Executed administrative support for company-wide IT inventory updates.</li>
+                    <li>> Assisted senior experts in hardware and system maintenance tasks.</li>
+                    <li>> Managed data entry and maintenance for detailed IT documentation.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer class="mt-16 pt-6 border-t
