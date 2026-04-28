@@ -8,8 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #0d1117; /* GitHub dark mode background */
-            color: #10b981; /* Terminal Green */
+            background-color: #0d1117; 
+            color: #10b981; 
             font-family: 'Fira Code', monospace;
             line-height: 1.6;
         }
@@ -41,60 +41,71 @@
             text-underline-offset: 4px;
         }
         
-        /* Custom link styling for the terminal aesthetic */
         .terminal-link {
             color: #58a6ff;
             text-decoration: none;
             border-bottom: 1px dashed #58a6ff;
             transition: all 0.2s ease-in-out;
+            word-break: break-word; /* Prevents long links from breaking mobile layout */
         }
         .terminal-link:hover {
             color: #ffffff;
             border-bottom: 1px solid #ffffff;
         }
+        
+        /* Ensures JSON brackets look aligned on mobile */
+        .json-block {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
     </style>
 </head>
-<body class="p-6 md:p-12 w-full max-w-6xl mx-auto min-h-screen selection:bg-green-500 selection:text-black">
+<body class="p-4 sm:p-6 md:p-12 w-full max-w-6xl mx-auto min-h-screen selection:bg-green-500 selection:text-black overflow-x-hidden">
 
-    <header class="mb-12 border-b border-gray-800 pb-6 w-full">
-        <div class="text-4xl font-bold mb-2">
+    <header class="mb-10 md:mb-12 border-b border-gray-800 pb-6 w-full">
+        <div class="text-xl sm:text-2xl md:text-4xl font-bold mb-2">
             <span class="text-dim">user@server:~$</span> ./start_portfolio.sh
         </div>
-        <div class="text-6xl font-bold text-white mt-8 mb-4">
+        
+        <div class="text-3xl sm:text-4xl md:text-6xl font-bold text-white mt-6 md:mt-8 mb-4 break-words">
             <span class="text-blue">&lt;</span> Glen_Qesku <span class="text-blue">/&gt;</span>
         </div>
-        <p class="text-xl">B.Sc. Computer Science Student @ Constructor University</p>
-        <p class="text-dim mt-2 flex flex-wrap items-center gap-2">
-            Bremen, Germany | g.qesku@gmail.com | 
-            <a href="https://github.com/GlenQesku" target="_blank" class="terminal-link text-lg">[ GitHub ]</a> |
-            <a href="https://www.linkedin.com/in/glen-qesku-6a5b26179/" target="_blank" class="terminal-link text-lg">[ LinkedIn ]</a> |
-            
-            <a href="Glen_Qesku_CV.pdf" download class="terminal-link text-lg text-yellow-400 border-yellow-400 hover:text-white hover:border-white">[ Download CV ]</a>
-        </p>
+        
+        <p class="text-base md:text-xl">B.Sc. Computer Science Student @ Constructor University</p>
+        
+        <div class="text-dim mt-4 flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center gap-2 md:gap-3 text-sm md:text-base">
+            <span>Bremen, Germany | g.qesku@gmail.com</span> 
+            <span class="hidden sm:inline">|</span>
+            <a href="https://github.com/GlenQesku" target="_blank" class="terminal-link">[ GitHub ]</a> 
+            <span class="hidden sm:inline">|</span>
+            <a href="https://www.linkedin.com/in/glen-qesku-6a5b26179/" target="_blank" class="terminal-link">[ LinkedIn ]</a> 
+            <span class="hidden sm:inline">|</span>
+            <a href="Glen_Qesku_CV.pdf" download class="terminal-link text-yellow-400 border-yellow-400 hover:text-white hover:border-white">[ Download CV ]</a>
+        </div>
     </header>
 
-    <section class="mb-12 w-full">
-        <h2 class="text-2xl font-bold text-blue mb-4">root@glen:~/skills# cat tech_stack.json</h2>
-        <div class="pl-4 border-l-2 border-gray-800">
+    <section class="mb-10 md:mb-12 w-full">
+        <h2 class="text-xl md:text-2xl font-bold text-blue mb-4 break-words">root@glen:~/skills# cat tech_stack.json</h2>
+        <div class="pl-2 md:pl-4 border-l-2 border-gray-800 json-block text-sm md:text-base">
             <p><span class="text-dim">{</span></p>
-            <p class="pl-4"><span class="text-yellow">"languages"</span>: <span class="text-white">["Python", "C", "C++", "Java", "SQL", "Bash"]</span>,</p>
-            <p class="pl-4"><span class="text-yellow">"databases"</span>: <span class="text-white">["MySQL", "MariaDB"]</span>,</p>
-            <p class="pl-4"><span class="text-yellow">"systems_&_tools"</span>: <span class="text-white">["Linux", "Git", "GitHub"]</span>,</p>
-            <p class="pl-4"><span class="text-yellow">"learning"</span>: 
+            <p class="pl-2 md:pl-4"><span class="text-yellow">"languages"</span>: <span class="text-white">["Python", "C", "C++", "Java", "SQL", "Bash"]</span>,</p>
+            <p class="pl-2 md:pl-4"><span class="text-yellow">"databases"</span>: <span class="text-white">["MySQL", "MariaDB"]</span>,</p>
+            <p class="pl-2 md:pl-4"><span class="text-yellow">"systems_&_tools"</span>: <span class="text-white">["Linux", "Git", "GitHub"]</span>,</p>
+            <p class="pl-2 md:pl-4"><span class="text-yellow">"learning"</span>: 
                 <span class="text-white">"<a href="https://www.coursera.org/account/accomplishments/verify/E0TKZ4EQD9GE" target="_blank" class="terminal-link">Google Cybersecurity Professional Certificate (In Progress)</a>"</span>
             </p>
             <p><span class="text-dim">}</span></p>
         </div>
     </section>
 
-    <section class="mb-12 w-full">
-        <h2 class="text-2xl font-bold text-blue mb-4">root@glen:~/projects# ls -la</h2>
+    <section class="mb-10 md:mb-12 w-full">
+        <h2 class="text-xl md:text-2xl font-bold text-blue mb-4 break-words">root@glen:~/projects# ls -la</h2>
         
-        <div class="mt-4 pl-4">
-            <div class="mb-6">
-                <h3 class="text-xl font-bold text-white">drwxr-xr-x  MediSched</h3>
+        <div class="mt-4 pl-2 md:pl-4">
+            <div class="mb-6 text-sm md:text-base">
+                <h3 class="text-lg md:text-xl font-bold text-white break-words">drwxr-xr-x  MediSched</h3>
                 <p class="text-dim mb-2">09/2025 - 12/2025 | Database Systems Course Project</p>
-                <ul class="list-none pl-4 space-y-1">
+                <ul class="list-none pl-2 md:pl-4 space-y-2">
                     <li>> Designed a relational database for managing patients, doctors, and appointments.</li>
                     <li>> Created ER diagrams and applied strict normalization principles.</li>
                     <li>> Implemented complex SQL queries for scheduling and data retrieval in a Linux environment.</li>
@@ -104,14 +115,14 @@
         </div>
     </section>
 
-    <section class="mb-12 w-full">
-        <h2 class="text-2xl font-bold text-blue mb-4">root@glen:~/experience# tail -f history.log</h2>
+    <section class="mb-10 md:mb-12 w-full">
+        <h2 class="text-xl md:text-2xl font-bold text-blue mb-4 break-words">root@glen:~/experience# tail -f history.log</h2>
         
-        <div class="mt-4 pl-4 border-l-2 border-gray-800">
+        <div class="mt-4 pl-2 md:pl-4 border-l-2 border-gray-800 text-sm md:text-base">
             <div class="mb-4">
-                <h3 class="text-xl font-bold text-white">IT Intern @ IDRA</h3>
+                <h3 class="text-lg md:text-xl font-bold text-white">IT Intern @ IDRA</h3>
                 <p class="text-dim mb-2">07/2023 - 09/2023 | IT, Research and Consulting Dept.</p>
-                <ul class="list-none pl-4 space-y-1">
+                <ul class="list-none pl-2 md:pl-4 space-y-2">
                     <li>> Executed administrative support for company-wide IT inventory updates.</li>
                     <li>> Assisted senior experts in hardware and system maintenance tasks.</li>
                     <li>> Managed data entry and maintenance for detailed IT documentation.</li>
@@ -120,4 +131,9 @@
         </div>
     </section>
 
-    <footer class="mt-16 pt-6 border-t
+    <footer class="mt-12 md:mt-16 pt-6 border-t border-gray-800 text-dim w-full text-sm md:text-base">
+        <p>root@glen:~$ echo "Status: Ready for new challenges."<span class="cursor"></span></p>
+    </footer>
+
+</body>
+</html>
