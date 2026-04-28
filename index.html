@@ -46,14 +46,13 @@
             text-decoration: none;
             border-bottom: 1px dashed #58a6ff;
             transition: all 0.2s ease-in-out;
-            word-break: break-word; /* Prevents long links from breaking mobile layout */
+            word-break: break-word;
         }
         .terminal-link:hover {
             color: #ffffff;
             border-bottom: 1px solid #ffffff;
         }
         
-        /* Ensures JSON brackets look aligned on mobile */
         .json-block {
             word-wrap: break-word;
             overflow-wrap: break-word;
@@ -67,7 +66,7 @@
             <span class="text-dim">user@server:~$</span> ./start_portfolio.sh
         </div>
         
-        <div class="text-3xl sm:text-4xl md:text-6xl font-bold text-white mt-6 md:mt-8 mb-4 break-words">
+        <div class="text-3xl sm:text-4xl md:text-6xl font-bold text-white mt-6 md:mt-8 mb-4 break-words" style="font-variant-ligatures: none;">
             <span class="text-blue">&lt;</span> Glen_Qesku <span class="text-blue">/&gt;</span>
         </div>
         
